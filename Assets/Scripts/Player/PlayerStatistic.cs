@@ -10,7 +10,7 @@ public class PlayerStatistic : MonoBehaviour
     public string Nickname => _nickname;
     public int RankId => _rankId;
 
-    private void Awake()
+    private void Start()
     {
         if (DatabaseManager.Instance == null)
         {
@@ -22,10 +22,7 @@ public class PlayerStatistic : MonoBehaviour
         _badgeNumber = pd.BadgeNumber;
         _rankId = pd.RankId;
         _nickname = pd.Nickname;
-    }
 
-    private void Start()
-    {
         UIManager.Instance.UpdateStatisticUI(this);
     }
 }
